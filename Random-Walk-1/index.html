@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Marche Aléatoire Version 2D</title>
+        <link rel="stylesheet" href="style.css">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    </head>
+    <body onload="init()">
+		<header>
+			<h2>1D Random Walk</h2>
+			<p>
+			75 particles taking random steps of unit length along the x-axis.<br>
+			Their mean displacement stays near zero - they move but realy don't go anywhere.<br>
+			The product of the number of steps taken and step size (1), nicely approximates the rms distance.
+			</p>
+		</header>
+		<section class="sim-holder">	
+			
+			<div class="sim-canvas">
+				<canvas id="rw-canvas" width="500px" height="100px">
+					canvas space
+				</canvas>						
+			</div>
+			<div class="sim-controls">
+				<input class="btn-style" type="button" id="startStopBtn" value="Start" onClick="toggleAnim()">
+				<input class="btn-style clearBtn" type="button" id="clearBtn" value="Clear" onClick="clearAnim()">
+			</div>
+
+				<table class="sim-results">
+					<tr>
+						<th></th>
+						<th class="th-row">x</th>
+					</tr>
+					<tr>
+						<th>Mean displacement</th>
+						<td><input type="number" id="x-mean" value="0" readonly></td>
+					</tr>
+					<tr>
+						<th>Mean square distance</th>
+						<td><input type="number" id="x-mean-square-distance" value="0" readonly></td>
+					</tr>
+					<tr>
+						<th>Root mean square distance</th>
+						<td><input type="number" id="x-root-mean-square-distance" value="0" readonly></td>
+					</tr>
+
+					<tr><td class="table-break" colspan="2"></td></tr>
+					<tr>
+						<th>Total steps</th>
+						<td><input type="number" id="steps-disp" value="0" readonly readonly></td>
+					</tr>
+					<tr>
+						<th>Steps*step size</th>
+						<td><input type="number" id="steps-stepSize" value="0" readonly readonly></td>
+					</tr>						
+				</table>					
+                 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+		</section>
+	
+	</body>
+</html>
